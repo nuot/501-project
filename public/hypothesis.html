@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div class="nav-wrapper grey lighten-2">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="reference.html">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+ <!-- Tabs -->
+ <div class="row">
+        <div class="col s12">
+                <ul class="tabs">
+                        <li class="tab col s2" id="Background"><a href="background.html">Background</a></li>
+                        <li class="tab col s2" id="processing"><a href="process.html">Data Processing</a></li>
+                        <li class="tab col s2" id="DataInsight"><a href="datainsight.html">Data Insight</a></li>
+                        <li class="tab col s2" id="PredictiveAnalysis"><a href="predictive.html">Predictive Analysis</a></li>
+                        <li class="tab col s2" id="HypothesisTest"><a href="hypothesis.html">Hypothesis Test</a></li>
+                        <li class="tab col s2" id="Limitation"><a href="limitation.html">Limitations and Ethical Issues</a></li>
+                       
+                      </ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div id="container">
+                <div class="col s12">
+                    <div class="col s2"></div>
+                    <div id="aboutus">
+                        <div class="col s6" id="hp1">
+                            <h6>Hypothesis Test 1</h6>
+                            <p>We want to further explore the relationship between people working load and their
+                                evaluation to local theaters. Based on the top 100 hard working city rank, all the
+                                ranked cities were grouped to three categories: Working extremely hard, Working very
+                                hard and Working hard.</p>
+                            <p>From the Boxplot, it’s not hard to find that working hard cities’s theater rating is
+                                generally lower than the other two groups. But we can not make deeper conclusion about
+                                if there are any difference between working extremely hard cities’ theater rating and
+                                working very hard cities’. Therefore, for detail information, we applied T test to help
+                                us figure out. </p>
+                            <h8>H0: People living in working extremely hard cities have the same attitude towards local
+                                theater with people living in working very hard cities.</h8>
+                            <br>
+                            <h8>H1: People living in working extremely hard cities tend to be more satisfied with local
+                                theater compared to who living in working very hard cities.</h8>
+                            <p>Since the P Value equals 0.0102, which is less than significant level 0.05, we reject the
+                                null hypothesis. Thus, there is enough evidence to conclude that there is a significant
+                                difference between two group cities’ theaters’ rating.Taking the boxplot into
+                                consideration, we can reach out a very interesting conclusion, that people living in
+                                more heavy working load cities tends to give local theater a higher rate.
+                            </p>
+                            <img id="hyp1" src="./pic/hyp1.png" alt="Picture not found">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="container">
+                        <div class="col s12">
+                            <div class="col s2"></div>
+                            <div id="aboutus">
+                                <div class="col s6" id='hp2'>
+                                    <h6>Hypothesis Test 2</h6>
+                                    <img id="hyp1" src="./pic/h2p1.png" alt="Picture not found">
+                                    <p>From the analysis above, we learn that workload can influence theaters overall rating, but what makes this phenomenon happens?
+
+                                            In order to solve this question, our team take state median average income, the state popula-tion, theater average review counts into consideration, because income and population might have a relationship with the population diversity and the ability to afford entertainment. 
+                                           </p>
+                                  
+                                    <h8>H0: Population, state’s median average income and review count together contribute to each state average theater rating.
+
+                                        </h8>
+                                    <br>
+                                    <h8>H1: State average theater rating has nothing to do with the combination of population, state’s median average income and review count. </h8>
+                                    <p>From the review counts and rating boxplot, we can see that less number reviewsinduce some extreme case like rating 1 or 5, and the more reviews the average the rating tends to be. Therefore, we consider review counts as an important variable in analyzing rating.
+                                            Since there are over two input factors, we apply linear regression to do this statistical test. The summary of the test shows as follows.
+                                            
+                                    </p>
+                                    <img id="hyp1" src="./pic/p1.png" alt="Picture not found">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+                <script src="./app.js"></script>
+</body>
+
+</html>

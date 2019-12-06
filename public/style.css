@@ -1,0 +1,73 @@
+#f_logo{
+    height: 50px;
+    width:50px
+  }
+
+p{
+    color: rgb(87, 85, 85)
+}
+
+h4{
+    color: rgb(94, 93, 93)
+}
+
+.page-footer{
+    background-color:rgb(221, 219, 219)
+}
+
+#cluster1{
+    height:350px;
+    width:400px
+}
+
+#cluster2{
+    height:350px;
+    width:400px
+}
+
+#tableauPlaceholder{
+height:350px;
+width:350px
+}
+
+#hyp1{
+    height:350px;
+    width:350px  
+}
+
+#background{
+    background-color: rgb(240, 236, 236);
+    margin: 0;
+}
+
+#cluster{
+    background-color:rgb(235, 235, 226);
+}
+
+#pred1{
+    height:450px;
+    width:450px  
+}
+
+#datainsight{
+    background-color:rgb(226, 224, 224);
+}
+
+/* #ethical{
+    background-color:rgb(212, 193, 193);
+}
+
+#limitation{
+    background-color:rgb(241, 238, 238);
+} */
+
+#hp1{
+    background-color:rgb(241, 238, 238);
+}
+#hp2{
+    background-color:rgb(226, 224, 224);
+}
+#topic{
+    height:350px;
+    width:550px  
+}

@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./style.css">
+    
 
 
 </head>
@@ -23,18 +24,18 @@
         </div>
     </nav>
 
- <!-- Tabs -->
- <div class="row">
+    <!-- Tabs -->
+    <div class="row">
         <div class="col s12">
-                <ul class="tabs">
-                        <li class="tab col s2" id="Background"><a href="background.html">Background</a></li>
-                        <li class="tab col s2" id="processing"><a href="process.html">Data Processing</a></li>
-                        <li class="tab col s2" id="DataInsight"><a href="datainsight.html">Data Insight</a></li>
-                        <li class="tab col s2" id="PredictiveAnalysis"><a href="predictive.html">Predictive Analysis</a></li>
-                        <li class="tab col s2" id="HypothesisTest"><a href="hypothesis.html">Hypothesis Test</a></li>
-                        <li class="tab col s2" id="Limitation"><a href="limitation.html">Limitations and Ethical Issues</a></li>
-                       
-                      </ul>
+            <ul class="tabs">
+                <li class="tab col s2" id="Background"><a href="background.html">Background</a></li>
+                <li class="tab col s2" id="processing"><a href="process.html">Data Processing</a></li>
+                <li class="tab col s2" id="DataInsight"><a href="datainsight.html">Data Insight</a></li>
+                <li class="tab col s2" id="PredictiveAnalysis"><a href="predictive.html">Predictive Analysis</a></li>
+                <li class="tab col s2" id="HypothesisTest"><a href="hypothesis.html">Hypothesis Test</a></li>
+                <li class="tab col s2" id="Limitation"><a href="limitation.html">Limitations and Ethical Issues</a></li>
+
+            </ul>
             <br>
             <br>
             <br>
@@ -45,12 +46,18 @@
                 <div class="col s12">
                     <div class="col s2"></div>
                     <div id="aboutus">
-                        <div class="col s6" id="hp1">
-                            <h6>Hypothesis Test 1</h6>
+                        <div class="col s8" id="hp1">
+                            <h4>Hypothesis Test 1</h4>
                             <p>We want to further explore the relationship between people working load and their
                                 evaluation to local theaters. Based on the top 100 hard working city rank, all the
                                 ranked cities were grouped to three categories: Working extremely hard, Working very
                                 hard and Working hard.</p>
+                                <div>
+                                        <a href="https://plot.ly/~Yanou_Yang/30/" target="_blank" title="Working Load vs rating" style="display: block; text-align: center;"><img src="https://plot.ly/~Yanou_Yang/30.png" alt="Working Load vs rating" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                        <script data-plotly="Yanou_Yang:30" src="https://plot.ly/embed.js" async></script>
+                                    </div>
+                                    
+                                    
                             <p>From the Boxplot, it’s not hard to find that working hard cities’s theater rating is
                                 generally lower than the other two groups. But we can not make deeper conclusion about
                                 if there are any difference between working extremely hard cities’ theater rating and
@@ -67,52 +74,78 @@
                                 consideration, we can reach out a very interesting conclusion, that people living in
                                 more heavy working load cities tends to give local theater a higher rate.
                             </p>
-                            <img id="hyp1" src="./pic/hyp1.png" alt="Picture not found">
                         </div>
                     </div>
                 </div>
 
 
                 <div id="container">
-                        <div class="col s12">
-                            <div class="col s2"></div>
-                            <div id="aboutus">
-                                <div class="col s6" id='hp2'>
-                                    <h6>Hypothesis Test 2</h6>
-                                    <img id="hyp1" src="./pic/h2p1.png" alt="Picture not found">
-                                    <p>From the analysis above, we learn that workload can influence theaters overall rating, but what makes this phenomenon happens?
+                    <div class="col s12">
+                        <div class="col s2"></div>
+                        <div id="aboutus">
+                            <div class="col s8" id='hp2'>
+                                <h4>Hypothesis Test 2</h4>
+                                <div>
+                                        <a href="https://plot.ly/~Yanou_Yang/11/" target="_blank" title="Theaters in top 100 working hard city by State" style="display: block; text-align: center;"><img src="https://plot.ly/~Yanou_Yang/11.png" alt="Theaters in top 100 working hard city by State" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                        <script data-plotly="Yanou_Yang:11" src="https://plot.ly/embed.js" async></script>
+                                    </div>
+                                    
+                                    
+                                <p>From the analysis above, we learn that workload can influence theaters overall
+                                    rating, but what makes this phenomenon happens?
 
-                                            In order to solve this question, our team take state median average income, the state popula-tion, theater average review counts into consideration, because income and population might have a relationship with the population diversity and the ability to afford entertainment. 
-                                           </p>
-                                  
-                                    <h8>H0: Population, state’s median average income and review count together contribute to each state average theater rating.
+                                    In order to solve this question, our team take state median average income, the
+                                    state popula-tion, theater average review counts into consideration, because income
+                                    and population might have a relationship with the population diversity and the
+                                    ability to afford entertainment.
+                                </p>
 
-                                        </h8>
-                                    <br>
-                                    <h8>H1: State average theater rating has nothing to do with the combination of population, state’s median average income and review count. </h8>
-                                    <p>From the review counts and rating boxplot, we can see that less number reviewsinduce some extreme case like rating 1 or 5, and the more reviews the average the rating tends to be. Therefore, we consider review counts as an important variable in analyzing rating.
-                                            Since there are over two input factors, we apply linear regression to do this statistical test. The summary of the test shows as follows.
-                                            
-                                    </p>
-                                    <img id="hyp1" src="./pic/p1.png" alt="Picture not found">
-                                </div>
+                                <h8>H0: Population, state’s median average income and review count together contribute
+                                    to each state average theater rating.
+
+                                </h8>
+                                <br>
+                                <h8>H1: State average theater rating has nothing to do with the combination of
+                                    population, state’s median average income and review count. </h8>
+                                    <div>
+                                            <a href="https://plot.ly/~Yanou_Yang/18/" target="_blank" title="Review_count vs rating" style="display: block; text-align: center;"><img src="https://plot.ly/~Yanou_Yang/18.png" alt="Review_count vs rating" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                            <script data-plotly="Yanou_Yang:18" src="https://plot.ly/embed.js" async></script>
+                                        </div>
+                                        
+                                <p>From the review counts and rating boxplot, we can see that less number reviewsinduce
+                                    some extreme case like rating 1 or 5, and the more reviews the average the rating
+                                    tends to be. </p>
+                                
+                                    <div>
+                                            <a href="https://plot.ly/~Yanou_Yang/32/" target="_blank" title="Reviewcounts and Rating" style="display: block; text-align: center;"><img src="https://plot.ly/~Yanou_Yang/32.png" alt="Reviewcounts and Rating" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                            <script data-plotly="Yanou_Yang:32" src="https://plot.ly/embed.js" async></script>
+                                        </div>
+                                        
+                                    
+                                <p>Besides, from the graph we can see, it’s obviously that with the number of reviews in-crease, the rating close to 3.5 and become more stable. Therefore, we consider review counts as an important variable in analyzing rating.</p>
+                                <p>Since there are over two input factors, we apply linear regression to do this statistical test. The summary of the test shows as follows.</p>
+                                <center>
+                                <img id="hyp1" src="./pic/hy1.png" alt="Picture not found"></center>
+                                <p>From the summary of the result, we can see that the r-square is too low to consider lin-ear regression model is a good fit of the data. Besides, we find among three input fac-tors, only review count’s P Value is less than 0.05, which indicates among three factors only review count has statistical significant relationship with rating. As a consequence, the assumption ahead wasn’t supported by the dataset we have right now. </p>
                             </div>
                         </div>
+                    </div>
 
 
 
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                    crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                    crossorigin="anonymous"></script>
-                <script src="./app.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                        crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                        crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                        crossorigin="anonymous"></script>
+                    <script src="./app.js"></script>
 </body>
 
 </html>

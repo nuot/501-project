@@ -25,152 +25,238 @@
 
   <!-- Tabs -->
   <div class="row">
-        <div class="col s12">
-            <ul class="tabs">
-                <li class="tab col s2" id="Background"><a href="background.html">Background</a></li>
-                <li class="tab col s2" id="processing"><a href="process.html">Data Processing</a></li>
-                <li class="tab col s2" id="DataInsight"><a href="datainsight.html">Data Insight</a></li>
-                <li class="tab col s2" id="PredictiveAnalysis"><a href="predictive.html">Predictive Analysis</a></li>
-                <li class="tab col s2" id="HypothesisTest"><a href="hypothesis.html">Hypothesis Test</a></li>
-                <li class="tab col s2" id="Limitation"><a href="limitation.html">Limitations and Ethical Issues</a></li>
-               
-              </ul>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s2" id="Background"><a href="background.html">Background</a></li>
+        <li class="tab col s2" id="processing"><a href="process.html">Data Processing</a></li>
+        <li class="tab col s2" id="DataInsight"><a href="datainsight.html">Data Insight</a></li>
+        <li class="tab col s2" id="PredictiveAnalysis"><a href="predictive.html">Predictive Analysis</a></li>
+        <li class="tab col s2" id="HypothesisTest"><a href="hypothesis.html">Hypothesis Test</a></li>
+        <li class="tab col s2" id="Limitation"><a href="limitation.html">Limitations and Ethical Issues</a></li>
 
-    <div id="container">
-      <div class="col s12">
-        <div class="col s2"></div>
-        <div id="aboutus">
-          <div class="col s8" id="predictive">
-            <h6>Sentiment Analysis</h6>
-            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil ipsa eveniet rerum sunt error neque ut
-              modi fuga, distinctio delectus, nostrum facere? Earum quaerat quisquam laborum qui repellendus, pariatur
-              culpa?</p> -->
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div id="container">
+        <div class="col s12">
+          <div class="col s2"></div>
+
+          <div class="col s8" id="sentiment">
+            <h4>Part 1: Sentiment Analysis</h4>
+            <h5>Description:</h5>
+            <p>The emotion of reviews can help theater getting to the know consumer behavior, what they want, what
+              they
+              like and dislike about the theater environment and equipment. So, we hope to predict the emotion behind
+              the reviews.</p>
+            <h5>Method:</h5>
+            <h6>1. Label the Data:</h6>
+            <p>We only use two variables that are ‘review’ (one review of each theater) and ‘rating’ (the rating
+              combined with the review). We assume that if a consumer is satisfied with the theater, he or she will
+              leave a positive review and a high rating score. And if a consumer is not satisfied with the theater, he
+              or she will leave a negative review and a low rating. So, if ‘rating’ >=4.5, this review is positive,
+              and if ‘rating’ <=3, we consider this review is negative. The number of all theaters is 23664, and the
+                number of labeled theaters is 19022. Our analysis is based on the names of these 19022 reviews. </p> <p>
+                The total number of positive reviews：13900</p>
+            <p>The total number of negative reviews: 5122</p>
+            <p>The total number of negative reviews: 5122</p>
+            <center><img id='table1' src="./pic/pred1.png" alt="Pic Not Found"></center>
+            <br>
+            <h6>2. Clean and Prepare the Data:</h6>
+            <p>We processed reviews of theaters, eliminating the stop words, special symbols, and uniform case.
+              Converted the collection of reviews to a matrix of token counts. Then we divided the training set and
+              the test set by a ratio of 8:2.</p>
+            <h6>3. Model Selected:</h6>
+            <p>SVM, Naïve Bayes, Decision Tree, KNN, Random Forest, Logistic Regression</p>
+            <h5>Results and Conclusion:</h5>
+            <p>As can be seen from the figure below, logistic regression achieved the highest accuracy (0.8192) in the
+              test set, followed by Random Forest (0.8121). But Naïve Bayes has low recall and high precision, which
+              means it will be easy to classify a positive review as a negative review. KNN and Random Forest models
+              both have higher recall and lower precision, which means it will be easy to classify a negative review
+              as a positive review.
+              Since the accuracy of 3 models are more than 80%, we can identify whether a review is positive or
+              negative with relatively high accuracy.
+            </p>
+            <center><img id='roc1' src="./pic/roc1.png" alt="Pic not found"></center>
+            <div class='tableauPlaceholder' id='viz1575434850276' style='position: relative'><noscript><a href='#'><img
+                    alt=' '
+                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SentimentAnalysis_15754295312130&#47;sentimentanalysis&#47;1_rss.png'
+                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='SentimentAnalysis_15754295312130&#47;sentimentanalysis' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                  value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SentimentAnalysis_15754295312130&#47;sentimentanalysis&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+            <script
+              type='text/javascript'>                    var divElement = document.getElementById('viz1575434850276'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+          </div>
+
+        </div>
+
+        <div id="container">
+          <div class="col s12">
+            <div class="col s2"></div>
+
+            <div class="col s8" id="reputation">
+              <h4>Part 2: Reputation Prediction</h4>
+              <h5>Description:</h5>
+              <p>The names of theaters are very important. A good business name not only can it attract consumers,
+                but also may affect the consumer experience. For example, consumers may be more inclined to give
+                high marks to a theater with a fancy name because they subconsciously think the theater is
+                trustworthy. We hope to predict the reputation of the theater through its name.</p>
+              <h5>Method:</h5>
+              <h6>1. Label the Data:</h6>
+              <p>We only use two variables that are ‘name’ (the names of theaters) and ‘rating’ (the general rating
+                of each theater). We assume that the better a theater's reputation, the higher its ratings. So, if
+                ‘rating’ >=4.5, this theater has a good reputation, and if ‘rating’ <=3, we consider this theater has a
+                  bad reputation. The number of all theaters is 8438, and the number of labeled theaters is 5529. Our
+                  analysis is based on the names of these 5529 theaters. </p> <p>The total number of
+                  popular theaters：4352</p>
+              <p>The total number of unpopular theaters: 1177</p>
+              <p>The data example is shown below:</p>
+              <center><img id='pred2' src="./pic/pred2.png" alt="pic not found"></center>
+              <h6>2. Clean and Prepare the Data:</h6>
+              <p>We processed names of theaters, eliminating the stop words, special symbols, and uniform case.
+                Converted the collection of names of theaters to a matrix of token counts. Then we divided the training
+                set and the test set by a ratio of 8:2.</p>
+              <h6>3. Model Selected:</h6>
+              <p>SVM, Naïve Bayes, Decision Tree, KNN, Random Forest, Logistic Regression</p>
+              <h5>Results and Conclusion:</h5>
+              <p>As can be seen from the figure below, SVM achieved the highest accuracy (0.8517) in the test set,
+                followed by Random Forest (0.8445). The performances of KNN, Decision Tree, logistic are also great. But
+                Naïve Bayes has very low recall and high precision, which means it will be easy to classify a theater
+                with a good reputation as a bad theater.
+                Since the accuracy of 5 models are more than 80%, theaters' name did have a relationship with theaters'
+                reputation. It could be that the art of naming influences consumers, or it could be that certain theater
+                chains, such as AMC, will win more recognition.
+              </p>
+              <center><img id='roc2' src="./pic/roc2.png" alt="pic not found"></center>
+              <div class='tableauPlaceholder' id='viz1575435119993' style='position: relative'><noscript><a
+                    href='#'><img alt=' '
+                      src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;ReputationPrediction&#47;Reputation&#47;1_rss.png'
+                      style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                  <param name='embed_code_version' value='3' />
+                  <param name='site_root' value='' />
+                  <param name='name' value='ReputationPrediction&#47;Reputation' />
+                  <param name='tabs' value='no' />
+                  <param name='toolbar' value='yes' />
+                  <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;ReputationPrediction&#47;Reputation&#47;1.png' />
+                  <param name='animate_transition' value='yes' />
+                  <param name='display_static_image' value='yes' />
+                  <param name='display_spinner' value='yes' />
+                  <param name='display_overlay' value='yes' />
+                  <param name='display_count' value='yes' /></object></div>
+              <script
+                type='text/javascript'>                    var divElement = document.getElementById('viz1575435119993'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col s12">
-        <div class="col s2"></div>
-        <div id="aboutus">
-    <div class="col s8">
-        <div class='tableauPlaceholder' id='viz1575434850276' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SentimentAnalysis_15754295312130&#47;sentimentanalysis&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SentimentAnalysis_15754295312130&#47;sentimentanalysis' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SentimentAnalysis_15754295312130&#47;sentimentanalysis&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1575434850276');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-      </div>
 
-      <div class="col s12">
+    <div id="container">
+        <div class="col s12">
           <div class="col s2"></div>
-          <div id="aboutus">
-      <div class="col s8">
-          <img id="pred1" src="./pic/2.png" alt="Picture not found">
-      </div>
-
-      <div id="container">
-          <div class="col s12">
-            <div class="col s2"></div>
-            <div id="aboutus">
-              <div class="col s8" id="predictive">
-                <h6>Reputation Prediction</h6>
-                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil ipsa eveniet rerum sunt error neque ut
-                  modi fuga, distinctio delectus, nostrum facere? Earum quaerat quisquam laborum qui repellendus, pariatur
-                  culpa?</p> -->
-              </div>
-            </div>
+          <div class="col s8" id="popularity">
+            <h4>Part 3: Popularity Prediction</h4>
+            <h5>Description:</h5>
+            <p>A business name is often theater’s first impression with customers. A good business name or trademark can
+              attract more consumers. We hope to predict the popularity of the theater through its name.</p>
+            <h5>Method:</h5>
+            <h6>1. Label the Data:</h6>
+            <p>We only use two variables that are ‘name’ (the names of theaters) and ‘review_count’ (the total numbers of
+              reviews of each theater). We assume that the more popular a theater is, the more reviews it gets. So, if
+              ‘review_count’ >=50, this theater is popular, and if ‘review_count’ <=10, we consider this theater to be
+                unpopular. The number of all theaters is 8438, and the number of labeled theaters is 6193. Our analysis is
+                based on the names of these 6,193 theaters. </p> <p>The total number of popular theaters: 2551</p>
+            <p>The total number of unpopular theaters: 3942</p>
+            <p>The data example is shown below:</p>
+            <center><img id='pred3' src="./pic/pred3.png" alt="pic not found"></center>
+            
+            <h6>2. Clean and Prepare the Data:</h6>
+            <p>We processed names of theaters, eliminating the stop words, special symbols, and uniform case. Converted
+              the collection of names of theaters to a matrix of token counts. Then we divided the training set and the
+              test set by a ratio of 8:2.</p>
+            <h6>3. Model Selected:</h6>
+            <p>SVM, Naïve Bayes, Decision Tree, KNN, Random Forest, Logistic Regression</p>
+            <h5>Results and Conclusion:</h5>
+            <p>As can be seen from the figure below, logistic regression achieved the highest accuracy (0.8121) in the
+              test set, followed by SVM (0.8047). KNN and Random Forest models both had higher recall and lower precision,
+              which means they will be easy to classify unpopular theater as popular.
+              Since the accuracy of logistic regression was more than 80%, theater's name did have a relationship with
+              theaters’ popularity. It could be that the art of naming influences consumers, or it could be that certain
+              theater chains, such as AMC, have commercial value.
+            </p>
+            <center><img id='roc3' src="./pic/roc3.png" alt="pic not found"></center>
+            
+            <div class='tableauPlaceholder' id='viz1575435236256' style='position: relative'>
+              <noscript><a href='#'><img alt=' '
+                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityPrediction&#47;popularity&#47;1_rss.png'
+                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='PopularityPrediction&#47;popularity' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                  value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityPrediction&#47;popularity&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' /></object></div>
+            <script
+              type='text/javascript'>                    var divElement = document.getElementById('viz1575435236256'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
           </div>
         </div>
-        <div class="col s12">
-            <div class="col s2"></div>
-            <div id="aboutus">
-        <div class="col s8">
-            <div class='tableauPlaceholder' id='viz1575435119993' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;ReputationPrediction&#47;Reputation&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ReputationPrediction&#47;Reputation' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;ReputationPrediction&#47;Reputation&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1575435119993');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> </div>
-    
-          <div class="col s12">
-              <div class="col s2"></div>
-              <div id="aboutus">
-          <div class="col s8">
-              <img id="pred1" src="./pic/4.png" alt="Picture not found">
-          </div>
 
-
-          <div id="container">
-              <div class="col s12">
-                <div class="col s2"></div>
-                <div id="aboutus">
-                  <div class="col s8" id="predictive">
-                    <h6>Popularity Prediction</h6>
-                    <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil ipsa eveniet rerum sunt error neque ut
-                      modi fuga, distinctio delectus, nostrum facere? Earum quaerat quisquam laborum qui repellendus, pariatur
-                      culpa?</p> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col s12">
-                <div class="col s2"></div>
-                <div id="aboutus">
-            <div class="col s8">
-                <div class='tableauPlaceholder' id='viz1575435236256' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityPrediction&#47;popularity&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PopularityPrediction&#47;popularity' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityPrediction&#47;popularity&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1575435236256');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> </div>
-        
-              <div class="col s12">
-                  <div class="col s2"></div>
-                  <div id="aboutus">
-              <div class="col s8">
-                  <img id="pred1" src="./pic/6.png" alt="Picture not found">
-              </div>
-
-
-          <div id="container">
-              <div class="col s12">
-                <div class="col s2"></div>
-                <div id="aboutus">
-                  <div class="col s8" id="predictive">
-                    <h6>Additional Analysis - topic modeling</h6>
-                    <p>We used Latent Dirichlet Allocation to build the topic model. In order to choose the most co-herent topic numbers, we have many tries.From the line plot, we can find that the 10 topics might be the best choice for our LDA model. </p>
-                    <img id='topic'src="./pic/topic.png" alt="Picture not found">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col s12">
-                <div class="col s2"></div>
-                <div id="aboutus">
-            <div class="col s8">
-
-            </div>
-        
-              <div class="col s12">
-                  <div class="col s2"></div>
-                  <div id="aboutus">
-              <div class="col s8">
-                <p>The theater review’s 10 topics are as follows.All the theater reviews have a dominant topic and the dominant topic contribution.
-                    The most prevalent topic among the review is topic 6, which keywords are made up by “show”, “time”, “see”, “night”, “go”, “first”, “last”, “get”, “build”, “see” and “locat”. Some-times, only keywords fail to make sense of what a topic is about. Finding a most representative sentences will help us in understanding the meaning of each topic.</p>
+        <div class ='col s2'></div>
+        <div class="col s8" id="topicmodeling">
+            <h4>Part 4: Additional Analysis - Topic Modeling</h4>
+            <p>1.	We used Latent Dirichlet Allocation to build the topic model. The first thing we have to do is to choose the best optimal number of topics. Our method is just build many LDA models and then calculate their coherence score, and then pick the k which has the largest score.</p>
+            <center><img id='topic' src="./pic/topic.png" alt="pic not found"></center>
+            <p>From the line plot, we can find that the 10 topics might be the best choice for our LDA model. </p>
+            <p>2. The theater review’s 10 topics are as follows.All the theater reviews have a dominant topic and the dominant topic contribution.</p>
+           <center><img id='topic1' src="./pic/topic1.png" alt="pic not found">
+            <img id='topic1' src="./pic/topic2.png" alt="pic not found"></center>
             
-                  <img id="topic" src="./pic/topic1.png" alt="Picture not found">
-                  <img id="topic" src="./pic/topic2.png" alt="Picture not found">
-                  <img id="topic" src="./pic/topic3.png" alt="Picture not found">
-                  <p>
-                      The topics distribution across the documents shows as follows.
-                      </p>
-                      <img id="topic" src="./pic/topic4.png" alt="Picture not found">
-              </div>
+            <p>The most prevalent topic among the review is topic 6, which keywords are made up by “show”,“time”, “see”, “night”, “go”, “first”, “last”, “get”, “build”, “see” and “locat”. Sometimes, only keywords fail to make sense of what a topic is about. Finding a most representative sentences will help us in understanding the meaning of each topic.</p>
+            <center><img id='topic3' src="./pic/topic3.png" alt="pic not found"></center>
+            <p>The topics distribution across the documents shows as follows.</p>
+            <center><img id='topic4' src="./pic/topic4.png" alt="pic not found"></center>
+        </div>
+      </div>
+    </div> 
     
     
     
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script src="./app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>

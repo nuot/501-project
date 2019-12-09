@@ -148,15 +148,20 @@ width:350px
 }
 
 #topic3{
-    height: 300px;
-    width:600px
+    height: 200px;
+    width:350px
 }
 
 #topic4{
-    height: 300px;
-    width:600px
+    height: 200px;
+    width:350px
 }
 
 #topicmodeling{
     background-color: rgb(250, 250, 234);
+}
+
+#topic5{
+    height: 350px;
+    width:250px
 }
